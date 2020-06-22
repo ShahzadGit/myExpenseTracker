@@ -7,7 +7,7 @@ export const AddTransaction = () => {
     const { addTransaction } = useContext(GlobalContext);
     const onSubmit = e => {
         e.preventDefault();
-        if(Number(amount) === 0){
+        if (Number(amount) === 0) {
             alert("Enter a +ve or -ve value.");
             return false;
         }
@@ -26,19 +26,19 @@ export const AddTransaction = () => {
             <form onSubmit={onSubmit}>
                 <div className="form-control">
                     <label htmlFor="text">Text</label>
-                    <input type="text" value={text} 
-                    onChange={(e) => setText(e.target.value)} 
-                    required
-                    placeholder="Enter text.." />
+                    <input type="text" value={text}
+                        onChange={(e) => setText(e.target.value)}
+                        required
+                        placeholder="Enter text.." />
                 </div>
                 <div className="form-control">
                     <label htmlFor="amount">Amount <br />
                         (negative - expense, positive - income)
                     </label>
-                    <input type="number" value={amount} 
-                    onChange={(e) => setAmount(e.target.value)}
-                    required
-                    placeholder="Enter amount.." />
+                    <input type="number" value={amount}
+                        onChange={(e) => setAmount(e.target.value)}
+                        required
+                        placeholder="Enter amount.." />
                 </div>
                 <button className="btn">Add transaction</button>
             </form>
